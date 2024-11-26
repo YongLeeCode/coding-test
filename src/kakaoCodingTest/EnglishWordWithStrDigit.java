@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class EnglishWordWithStrDigit {
 
-    public static void solution(String s) {
+    public static void solveProblem(String s) {
         String[] characters = s.split("");
 
         //map
