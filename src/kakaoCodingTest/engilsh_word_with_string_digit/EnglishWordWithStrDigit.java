@@ -30,8 +30,7 @@ public class EnglishWordWithStrDigit {
             if (jo.matches("\\d")){
                 newStrNum += jo;
                 jo = "";
-            }
-            if (hashNum.containsKey(jo)) {
+            } else if (hashNum.containsKey(jo)) {
                 newStrNum += hashNum.get(jo);
                 jo = "";
             }
