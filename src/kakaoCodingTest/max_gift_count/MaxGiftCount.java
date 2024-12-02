@@ -1,4 +1,4 @@
-package kakaoCodingTest;
+package kakaoCodingTest.max_gift_count;
 
 import java.util.Arrays;
 
@@ -6,25 +6,25 @@ import java.util.Arrays;
 // 주고 받은 수 가 같을 때, 선물 지수 낮은 사람이 선물 1개 줌
 
 public class MaxGiftCount {
-    public static void solveProblem(String[] friends, String[] gifts){
 
-        //muzi, ryan, frodo, neo
+    public static void solveProblem(String[] friends, String[] gifts) {
+
         int[][] moveGifts = new int[friends.length][friends.length];
 
-        for(String gift : gifts){
+        for (String gift : gifts) {
             String[] giftGiverAndReceiver = gift.split(" ");
             String giver = giftGiverAndReceiver[0];
             String receiver = giftGiverAndReceiver[1];
 
             int giverPoint = 0;
             int receiverPoint = 0;
-            for(int i = 0; i < friends.length; i++){
-                if(friends[i].equals(giver)){
+            for (int i = 0; i < friends.length; i++) {
+                if (friends[i].equals(giver)) {
                     giverPoint = i;
                 }
             }
-            for(int i = 0; i < friends.length; i++){
-                if(friends[i].equals(receiver)){
+            for (int i = 0; i < friends.length; i++) {
+                if (friends[i].equals(receiver)) {
                     receiverPoint = i;
                 }
             }
@@ -41,10 +41,10 @@ public class MaxGiftCount {
             for (int j = 0; j < moveGifts.length; j++) {
                 if (moveGifts[i][j] > moveGifts[j][i]) {
                     giftIndex[i]++;
-                } else if (moveGifts[i][j] == moveGifts[j][i]){
+                } else if (moveGifts[i][j] == moveGifts[j][i]) {
                     int person1 = Arrays.stream(moveGifts[i]).sum();
                     int person2 = Arrays.stream(moveGifts[j]).sum();
-                    if(person1 > person2){
+                    if (person1 > person2) {
                         giftIndex[i]++;
                     }
                 }
@@ -55,7 +55,7 @@ public class MaxGiftCount {
 
         System.out.println("giftIndex: " + Arrays.toString(giftIndex));
 
-        if(areAllEqual(giveMinusreceive)){
+        if (areAllEqual(giveMinusreceive)) {
             System.out.println(0);
         } else {
             int nextMaxGift = Arrays.stream(giftIndex).max().getAsInt();
@@ -78,4 +78,9 @@ public class MaxGiftCount {
         return true; // 모든 요소가 같으면 true 리턴
     }
 
+    public static void main(String[] args) {
+        String[] friends = {"muzi", "ryan", "frodo", "neo"};
+        String[] gifts = {"muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"};
+        solveProblem(friends, gifts);
+    }
 }
