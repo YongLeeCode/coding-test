@@ -1,20 +1,28 @@
-package goodCodingTestProblem.caesar_cipher;
+package how_to_use_string.caesar_cipher;
 
 public class CaesarCipher {
-    public static String solveProblem(String s, int n) {
+    public static String solution(String s, int n) {
         char[] characters = s.toCharArray();
-        String newWord = "";
+        StringBuilder newWord = new StringBuilder();
+
         for(char c : characters){
-            if(c + n > 122 && c <= 122) {
-                newWord += (char)(c + n + (97 - 123));
-            } else if (c <= 90 && c + n > 90) {
-                newWord += (char)(c + n + (65 - 91));
-            } else if (c > 122 || c < 65) {
-                newWord += c;
+            int transformedChar = c + n;
+            if(transformedChar > 'z' && c <= 'z') {
+                newWord.append((char) (transformedChar + ('a' - ('z' + 1))));
+            } else if (c <= 'Z' && transformedChar > 'Z') {
+                newWord.append((char) (transformedChar + ('A' - ('Z' + 1))));
+            } else if (c > 'z' || c < 'A') {
+                newWord.append(c);
             } else {
-                newWord += (char)(c + n);
+                newWord.append((char) (transformedChar));
             }
         }
-        return newWord;
+
+        return newWord.toString();
+    }
+
+    public static void main(String[] args) {
+        String answer = solution("z b A Z", 1);
+        System.out.println(answer);
     }
 }
