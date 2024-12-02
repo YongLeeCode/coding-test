@@ -2,7 +2,7 @@
 
 ### 문제 설명
 주차장의 요금표와 차량이 들어오고(입차) 나간(출차) 기록이 주어졌을 때,
-차량별로 주차 요금을 계[EnglishWordWithStrDigit.java](../engilsh_word_with_string_digit/EnglishWordWithStrDigit.java)산하려고 합니다. 아래는 하나의 예시를 나타냅니다.
+차량별로 주차 요금을 계산하려고 합니다. 아래는 하나의 예시를 나타냅니다.
 
 ### 입출력
 | fees(입력)                | records(입력) | result |
