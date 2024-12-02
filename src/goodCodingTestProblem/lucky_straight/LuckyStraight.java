@@ -1,4 +1,4 @@
-package baekjoonCodingTest;
+package goodCodingTestProblem.lucky_straight;
 
 // 문제
 // 어떤 게임의 아웃복서 캐릭터에게는 럭키 스트레이트라는 기술이 존재한다.
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LuckyStraight {
-    public static void solveProblem(int input) {
+    public static String solution(int input) {
         int num1 = 0;
         int num2 = 0;
 
@@ -39,9 +39,15 @@ public class LuckyStraight {
 
         // 조건문으로 출력
         if(num1 == num2) {
-            System.out.println("LUCKY");
+            return "LUCKY";
         } else {
-            System.out.println("READY");
+            return "READY";
         }
+    }
+
+    public static void main(String[] args) {
+        int input = 55;
+        String output = solution(input);
+        System.out.println(output);
     }
 }
