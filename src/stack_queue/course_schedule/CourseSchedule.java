@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import stack_queue.create_queue.MyQueue;
+import stack_queue.create_stack.MyStack;
 
 public class CourseSchedule {
 //    public static boolean solution(int numCourses, int[][] prerequisites){
@@ -77,9 +79,26 @@ public class CourseSchedule {
     }
 
     public static void main(String[] args) {
-        int numCourses = 4;
-        int[][] pre = {{1,0},{0,2},{2,1}};
-        boolean result = solution(numCourses, pre);
-        System.out.println(result);
+//        int numCourses = 4;
+//        int[][] pre = {{1,0},{0,2},{2,1}};
+//        boolean result = solution(numCourses, pre);
+        MyStack stack = new MyStack();
+        MyQueue queue = new MyQueue();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        int size = stack.size();
+        System.out.println(size);
+        int pop = stack.pop();
+        System.out.println(pop);
+        size = stack.size();
+        System.out.println(size);
+//        queue.add(5);
+//        queue.add(6);
+//        System.out.println(queue.size());
+//        int a = queue.poll();
+//        System.out.println(a);
+//        System.out.println(queue.size());
     }
 }
