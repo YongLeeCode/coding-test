@@ -1,37 +1,48 @@
 package exam3;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import javax.swing.tree.TreeNode;
-//public class TreeNode {
-//    int val;
-//    TreeNode left;
-//    TreeNode right;
-//    TreeNode() {}
-//    TreeNode(int val) { this.val = val; }
-//    TreeNode(int val, TreeNode left, TreeNode right) {
-//        this.val = val;
-//        this.left = left;
-//        this.right = right;
+///**
+// * Definition for a binary tree node.
+// * public class TreeNode {
+// *     int val;
+// *     TreeNode left;
+// *     TreeNode right;
+// *     TreeNode() {}
+// *     TreeNode(int val) { this.val = val; }
+// *     TreeNode(int val, TreeNode left, TreeNode right) {
+// *         this.val = val;
+// *         this.left = left;
+// *         this.right = right;
+// *     }
+// * }
+// */
+//class Solution {
+//    public int minDepth(TreeNode root) {
+//        if(root == null) {
+//            return 0;
+//        }
+//
+//        Queue<TreeNode> queue = new LinkedList<>();
+//        queue.offer(root);
+//
+//        int depth = 1;
+//
+//        while(!queue.isEmpty()) {
+//            int size = queue.size();
+//            System.out.println(size);
+//            for (int i = 0; i < size; i++) {
+//                TreeNode node = queue.poll();
+//                if(node.left == null && node.right == null){
+//                    return depth;
+//                }
+//                if(node.left != null){
+//                    queue.offer(node.left);
+//                }
+//                if(node.right != null){
+//                    queue.offer(node.right);
+//                }
+//            }
+//            depth++;
+//        }
+//
+//        return depth;
 //    }
 //}
-
-public class MinimumDepthOfBinaryTree {
-    public static int minDepth(TreeNode root) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(root.val);
-        int depth = 1;
-
-        while(!queue.isEmpty()) {
-              queue.poll();
-              if(queue == null){
-                  continue;
-              }
-              queue.offer(root.left);
-              queue.offer(root.right);
-        }
-
-        return depth;
-    }
-
-}
