@@ -1,10 +1,8 @@
 package exam3;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class LongJump {
+// 출처: 프로그래머스
+// 문제 제목: 멀리 뛰기
+public class JumpCase {
     //시간 초과
 //    public static long solution(int n) {
 //        long result = dfs(n, 0) % 1234567;
