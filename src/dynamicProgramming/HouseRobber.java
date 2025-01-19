@@ -1,4 +1,4 @@
-package greedy;
+package dynamicProgramming;
 
 // 출처: leetcode
 // 문제 제목: House Robber
